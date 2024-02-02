@@ -16,8 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connexion à la base de données MongoDB
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useUnifiedTopology: true,
-});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('Connexion à la base de données MongoDB établie avec succès');
