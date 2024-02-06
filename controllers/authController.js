@@ -76,30 +76,3 @@ const logout = async (req, res) => {
 };
 
 module.exports = { login, register, resetPassword, logout };
-
-// Connexion
-// const login = async (req, res) => {
-//     const { username, password } = req.body;
-
-//     try {
-//         const user = await User.findOne({ username });
-
-//         if (!user) {
-//             return res.status(401).json({ message: 'Nom d\'utilisateur ou mot de passe incorrect' });
-//         }
-
-//         const isPasswordValid = await user.comparePassword(password);
-
-//         if (!isPasswordValid) {
-//             return res.status(401).json({ message: 'Nom d\'utilisateur ou mot de passe incorrect' });
-//         }
-
-//         // Génération du jeton JWT
-//         const token = jwt.sign({ userId: user._id }, process.env.JWT_KEY, { expiresIn: '1h' });
-
-//         res.status(200).json({ token });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ message: 'Erreur lors de la connexion' });
-//     }
-// };
